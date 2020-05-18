@@ -1,6 +1,6 @@
 # Ex: TOKEN=tokengoeshere TITLE=titlegoeshere DIRECTOR=joeshmoe sh curl-scripts/movies/create.sh
 
-curl "https://pacific-sierra-23796.herokuapp.com/posts" \
+curl "http://localhost:4741/posts" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

@@ -1,6 +1,6 @@
 # Ex: TOKEN=tokengoeshere sh curl-scripts/movies/index.sh
 
-curl "https://pacific-sierra-23796.herokuapp.com/posts" \
+curl "http://localhost:4741/posts" \
   --include \
   --request GET \
   --header "Content-Type: application/json" \
