@@ -12,10 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>SONK athlete forum</h1>
+      <h1>SONK Athlete Profile</h1>
 
       <p id="message"></p>
-
+    <div class="unauthenticated">
       <form id="sign-up" class="border">
         <fieldset>
           <legend>Sign up!</legend>
@@ -34,7 +34,9 @@
           <input type="submit" value="Sign in!">
         </fieldset>
       </form>
+    </div>
 
+    <div class="authenticated">
       <form id="sign-out" class="border">
         <fieldset>
           <legend>Sign Out!</legend>
@@ -48,6 +50,47 @@
           <input type="password" name="passwords[old]" placeholder="Old Password">
           <input type="password" name="passwords[new]" placeholder="New Password">
           <input type="submit" value="Change Password!">
+        </fieldset>
+      </form>
+    </div>
+
+      <form id="post-create" class="border">
+        <fieldset>
+          <legend>Create Post</legend>
+          <input type="text" name="post[text]" placeholder="Enter Post Text">
+          <input type="submit" value="Create Post">
+        </fieldset>
+      </form>
+
+      <form id="post-index" class="border">
+        <fieldset>
+          <legend>Get All Posts</legend>
+          <input type="submit" value="Get All Posts">
+        </fieldset>
+      </form>
+
+      <form id="post-show" class="border">
+        <fieldset>
+          <legend>Get Post</legend>
+          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="submit">
+        </fieldset>
+      </form>
+
+      <form id="post-delete" class="border">
+        <fieldset>
+          <legend>Delete Post</legend>
+          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="submit" value="Delete Post">
+        </fieldset>
+      </form>
+
+      <form id="post-update" class="border">
+        <fieldset>
+          <legend>Update Post</legend>
+          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="text" name="post[text]" placeholder="Enter Post Text">
+          <input type="submit" value="Update Post">
         </fieldset>
       </form>
     </body>

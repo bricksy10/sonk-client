@@ -22,6 +22,8 @@ const signInSuccess = function (data) {
   $('#message').addClass('success')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
+  $('.authenticated').show()
+  $('.unauthenticated').hide()
 }
 
 const signInFailure = function (error) {
@@ -37,6 +39,8 @@ const signOutSuccess = function () {
   $('#message').addClass('success')
   $('form').trigger('reset')
   console.log('signOutSuccess ran and nothing was returned!')
+  $('.authenticated').hide()
+  $('.unauthenticated').show()
   store.user = null
 }
 

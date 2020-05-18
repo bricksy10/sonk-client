@@ -6,9 +6,7 @@ curl "https://pacific-sierra-23796.herokuapp.com/posts/${ID}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "post": {
-
-    }
+    "post":
   }'
 
   echo
