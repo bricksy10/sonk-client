@@ -5,6 +5,7 @@ const onCreateSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('onCreateSuccess ran. Data is :', data)
+  $('form').trigger('reset')
 }
 
 const onCreateFailure = function (error) {
@@ -12,6 +13,7 @@ const onCreateFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onCreateFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const onIndexSuccess = function (data) {
@@ -19,6 +21,7 @@ const onIndexSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('onIndexSuccess ran. Data is :', data.posts)
+  $('form').trigger('reset')
 }
 
 const onIndexFailure = function (error) {
@@ -26,6 +29,7 @@ const onIndexFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onIndexFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const onShowSuccess = function (data) {
@@ -33,6 +37,7 @@ const onShowSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('onCreateSuccess ran. Data is :', data)
+  $('form').trigger('reset')
 }
 
 const onShowFailure = function (error) {
@@ -40,6 +45,7 @@ const onShowFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onShowFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const onDestroySuccess = function () {
@@ -47,6 +53,7 @@ const onDestroySuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('Post successfully deleted')
+  $('form').trigger('reset')
 }
 
 const onDestroyFailure = function (error) {
@@ -54,6 +61,7 @@ const onDestroyFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onDestroyFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const onUpdateSuccess = function () {
@@ -61,6 +69,7 @@ const onUpdateSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('Post successfully updated')
+  $('form').trigger('reset')
 }
 
 const onUpdateFailure = function (error) {
@@ -68,6 +77,7 @@ const onUpdateFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('onUpdateFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 module.exports = {

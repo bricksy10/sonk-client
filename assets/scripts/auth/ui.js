@@ -7,6 +7,7 @@ const signUpSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signUpSuccess ran. Data is :', data)
+  $('form').trigger('reset')
 }
 
 const signUpFailure = function (error) {
@@ -14,6 +15,7 @@ const signUpFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('signUpFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
@@ -24,6 +26,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('.authenticated').show()
   $('.unauthenticated').hide()
+  $('form').trigger('reset')
 }
 
 const signInFailure = function (error) {
@@ -31,14 +34,15 @@ const signInFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('signInFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('form').trigger('reset')
   console.log('signOutSuccess ran and nothing was returned!')
+  $('form').trigger('reset')
   $('.authenticated').hide()
   $('.unauthenticated').show()
   store.user = null
@@ -49,6 +53,7 @@ const signOutFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('signOutFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function () {
@@ -56,6 +61,7 @@ const changePasswordSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('changePasswordSuccess ran and nothing was returned!')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
@@ -63,6 +69,7 @@ const changePasswordFailure = function (error) {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('changePasswordFailure ran. Error is :', error)
+  $('form').trigger('reset')
 }
 
 module.exports = {

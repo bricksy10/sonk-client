@@ -1,0 +1,31 @@
+// index
+
+<div class="container">
+   <h2>Posts: </h2>
+   <ul id="posts">
+   {{#each posts as |post|}}
+     <li>
+       {{post.title}} By: {{post.owner}}
+     </li>
+   {{/each}}
+   </ul>
+</div>
+
+
+// delete
+
+{{#each posts as |post|}}
+  {{log post}}
+  <section data-id="{{post._id}}">
+    <h6>Title: {{post.title}}</h6>
+    <h6>text:</h6>
+    <h6>
+      {{post.body}}
+    </h6>
+    <h6>Post ID: {{post._id}}</h6>
+    <h6>Owner: {{#if post.owner}}{{post.owner}}{{else}}No owner provided.{{/if}}</h6>
+    <button class="btn btn-danger delete-post" data-id="{{post._id}}">Delete Post</button>
+    <h6>---------------------</h6>
+  </section>
+
+{{/each}}

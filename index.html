@@ -13,6 +13,13 @@
 </head>
 <body>
 
+  <div class="header">
+    <img src="sonk.jpg" alt="Logo" style="float: left"/>
+    <h1>SONK Athlete Profile</h1>
+  </div>
+
+  <br>
+
   <p id="message"></p>
   <div class="unauthenticated">
     <form id="sign-up" class="border">
@@ -52,12 +59,7 @@
     </fieldset>
   </form>
 
-  <hr width="40%">
-
-  <div class="header">
-    <h1>SONK Athlete Profile</h1>
-    <img src="/public/sonk.jpg" alt="Logo" style="float: left"/>
-  </div>
+  <br>
 
   <div class="row">
     <div class="side">
@@ -67,20 +69,23 @@
     <div class="main">
       <h3>Posts</h3>
       <label class="textarea" style="height:100px;"></label>
-      <textarea id="postbox" placeholder="Create new post.."rows="8" cols="70"></textarea>
+      <textarea id="postbox" name="post[text]" placeholder="Create new post.."rows="8" cols="70"></textarea>
       <br>
     </div>
   </div>
 
-  <div class="footer">
   <form id="post-create" class="border">
     <fieldset>
       <legend>Create Post</legend>
-      <input type="text" name="post[text]" placeholder="Enter Post Text">
       <input type="submit" value="Create Post">
     </fieldset>
   </form>
 
+    <hr width="60%">
+
+// <div id="content" class="content"></div>
+
+  <div class="footer">
   <form id="post-index" class="border">
     <fieldset>
       <legend>Get All Posts</legend>

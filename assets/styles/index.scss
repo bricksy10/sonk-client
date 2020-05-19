@@ -5,10 +5,19 @@
 }
 
 .header {
+  height: 220px;
   padding: 60px;
   text-align: center;
   background: #1abc9c;
   color: white;
+}
+
+img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 180px;
+  width: 200px;
 }
 
 body {
@@ -34,6 +43,10 @@ body {
   background-color: #aaa;
   width: 100%;
   padding: 20px;
+}
+
+#post-create {
+  justify-content: right;
 }
 
 .footer {
