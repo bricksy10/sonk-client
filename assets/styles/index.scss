@@ -1,4 +1,48 @@
 @import '~bootstrap/scss/bootstrap';
-.authenticated {
-  display: none
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer {
+  font-size: 12px;
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+legend {
+  font-size: 24px;
 }

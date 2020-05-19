@@ -1,98 +1,117 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title>SONK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>SONK Athlete Profile</h1>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<body>
 
-      <p id="message"></p>
-    <div class="unauthenticated">
-      <form id="sign-up" class="border">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign up!">
-        </fieldset>
-      </form>
+  <p id="message"></p>
+  <div class="unauthenticated">
+    <form id="sign-up" class="border">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <input type="submit" value="Sign up!">
+      </fieldset>
+    </form>
 
-      <form id="sign-in" class="border">
-        <fieldset>
-          <legend>Sign in!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" value="Sign in!">
-        </fieldset>
-      </form>
+    <form id="sign-in" class="border">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </fieldset>
+    </form>
+  </div>
+
+
+  <form id="sign-out" class="border">
+    <fieldset>
+      <legend>Sign Out!</legend>
+      <input type="submit" value="Sign out!">
+    </fieldset>
+  </form>
+
+  <form id="change-password" class="border">
+    <fieldset>
+      <legend>Change Password!</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password">
+      <input type="password" name="passwords[new]" placeholder="New Password">
+      <input type="submit" value="Change Password!">
+    </fieldset>
+  </form>
+
+  <hr width="40%">
+
+  <div class="header">
+    <h1>SONK Athlete Profile</h1>
+    <img src="/public/sonk.jpg" alt="Logo" style="float: left"/>
+  </div>
+
+  <div class="row">
+    <div class="side">
+      <h3>About Me</h3>
+      <div class="fakeimg" style="height:200px;">Athlete Photo Here</div>
     </div>
-
-    <div class="authenticated">
-      <form id="sign-out" class="border">
-        <fieldset>
-          <legend>Sign Out!</legend>
-          <input type="submit" value="Sign out!">
-        </fieldset>
-      </form>
-
-      <form id="change-password" class="border">
-        <fieldset>
-          <legend>Change Password!</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-      </form>
-
-      <form id="post-create" class="border">
-        <fieldset>
-          <legend>Create Post</legend>
-          <input type="text" name="post[text]" placeholder="Enter Post Text">
-          <input type="submit" value="Create Post">
-        </fieldset>
-      </form>
-
-      <form id="post-index" class="border">
-        <fieldset>
-          <legend>Get All Posts</legend>
-          <input type="submit" value="Get All Posts">
-        </fieldset>
-      </form>
-
-      <form id="post-show" class="border">
-        <fieldset>
-          <legend>Get Post</legend>
-          <input type="text" name="post[id]" placeholder="Enter Post ID">
-          <input type="submit">
-        </fieldset>
-      </form>
-
-      <form id="post-delete" class="border">
-        <fieldset>
-          <legend>Delete Post</legend>
-          <input type="text" name="post[id]" placeholder="Enter Post ID">
-          <input type="submit" value="Delete Post">
-        </fieldset>
-      </form>
-
-      <form id="post-update" class="border">
-        <fieldset>
-          <legend>Update Post</legend>
-          <input type="text" name="post[id]" placeholder="Enter Post ID">
-          <input type="text" name="post[text]" placeholder="Enter Post Text">
-          <input type="submit" value="Update Post">
-        </fieldset>
-      </form>
+    <div class="main">
+      <h3>Posts</h3>
+      <label class="textarea" style="height:100px;"></label>
+      <textarea id="postbox" placeholder="Create new post.."rows="8" cols="70"></textarea>
+      <br>
     </div>
+  </div>
 
-    </body>
+  <div class="footer">
+  <form id="post-create" class="border">
+    <fieldset>
+      <legend>Create Post</legend>
+      <input type="text" name="post[text]" placeholder="Enter Post Text">
+      <input type="submit" value="Create Post">
+    </fieldset>
+  </form>
+
+  <form id="post-index" class="border">
+    <fieldset>
+      <legend>Get All Posts</legend>
+      <input type="submit" value="Get All Posts">
+    </fieldset>
+  </form>
+
+  <form id="post-show" class="border">
+    <fieldset>
+      <legend>Get Post</legend>
+      <input type="text" name="post[id]" placeholder="Enter Post ID">
+      <input type="submit">
+    </fieldset>
+  </form>
+
+  <form id="post-delete" class="border">
+    <fieldset>
+      <legend>Delete Post</legend>
+      <input type="text" name="post[id]" placeholder="Enter Post ID">
+      <input type="submit" value="Delete Post">
+    </fieldset>
+  </form>
+
+  <form id="post-update" class="border">
+    <fieldset>
+      <legend>Update Post</legend>
+      <input type="text" name="post[id]" placeholder="Enter Post ID">
+      <input type="text" name="post[text]" placeholder="Enter Post Text">
+      <input type="submit" value="Update Post">
+    </fieldset>
+  </form>
+</div>
+</body>
 </html>

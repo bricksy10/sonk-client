@@ -36,7 +36,7 @@ const onShowPost = function (event) {
       .then(ui.onShowSuccess)
       .catch(ui.onShowFailure)
   } else {
-    $('#message').html('<p>Please provide an post id!</p>')
+    $('#message').html('<p>Please provide a post id!</p>')
     $('#message').css('background-color', 'red')
     console.log('Please enter an post id!')
   }
@@ -54,7 +54,7 @@ const onDeletePost = function (event) {
       .then(ui.onDeleteSuccess)
       .catch(ui.onDeleteFailure)
   } else {
-    $('#message').html('<p>Please provide an post id!</p>')
+    $('#message').html('<p>Please provide a post id!</p>')
     $('#message').css('background-color', 'red')
     console.log('Please provide a post id!')
   }
