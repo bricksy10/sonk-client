@@ -52,9 +52,5 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  onSignUp,
-  onSignIn,
-  onSignOut,
-  onChangePassword,
   addHandlers
 }
