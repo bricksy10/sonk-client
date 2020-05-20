@@ -7,7 +7,8 @@ const signUpSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signUpSuccess ran. Data is :', data)
-  $('form').trigger('reset')
+  $('.authenticated').show()
+  $('.unauthenticated').hide()
 }
 
 const signUpFailure = function (error) {
@@ -26,7 +27,6 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('.authenticated').show()
   $('.unauthenticated').hide()
-  $('form').trigger('reset')
 }
 
 const signInFailure = function (error) {
