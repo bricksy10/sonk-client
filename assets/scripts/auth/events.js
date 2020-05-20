@@ -44,9 +44,17 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('submit', onSignOut)
+  $('#change-password').on('submit', onChangePassword)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  addHandlers
 }
