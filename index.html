@@ -14,7 +14,7 @@
 <body>
 
   <div class="header">
-    <img src="sonk.jpg" alt="Logo" style="float: left"/>
+    <img src="public/sonk.jpg" alt="Logo" style="float: left"/>
     <h1>SONK Athlete Profile</h1>
   </div>
 
@@ -42,81 +42,83 @@
     </form>
   </div>
 
+  <div class="authenticated">
+    <form id="sign-out" class="border">
+      <fieldset>
+        <legend>Sign Out!</legend>
+        <input type="submit" value="Sign out!">
+      </fieldset>
+    </form>
 
-  <form id="sign-out" class="border">
-    <fieldset>
-      <legend>Sign Out!</legend>
-      <input type="submit" value="Sign out!">
-    </fieldset>
-  </form>
+    <form id="change-password" class="border">
+      <fieldset>
+        <legend>Change Password!</legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input type="submit" value="Change Password!">
+      </fieldset>
+    </form>
 
-  <form id="change-password" class="border">
-    <fieldset>
-      <legend>Change Password!</legend>
-      <input type="password" name="passwords[old]" placeholder="Old Password">
-      <input type="password" name="passwords[new]" placeholder="New Password">
-      <input type="submit" value="Change Password!">
-    </fieldset>
-  </form>
 
-  <br>
+    <br>
 
-  <div class="row">
-    <div class="side">
-      <h3>About Me</h3>
-      <div class="fakeimg" style="height:200px;">Athlete Photo Here</div>
+    <div class="row">
+      <div class="side">
+        <h3>About Me</h3>
+        <div class="fakeimg" style="height:200px;">Athlete Photo Here</div>
+      </div>
+      <div class="main">
+        <h3>Create Post</h3>
+        <label class="textarea" style="height:100px;"></label>
+        <textarea id="postbox" name="post[text]" placeholder="Create new post.."rows="8" cols="70"></textarea>
+        <form id="post-create" class="border">
+          <fieldset>
+            <input type="submit" value="Create Post">
+          </fieldset>
+        </form>
+
+        <br>
+
+      </div>
     </div>
-    <div class="main">
-      <h3>Posts</h3>
-      <label class="textarea" style="height:100px;"></label>
-      <textarea id="postbox" name="post[text]" placeholder="Create new post.."rows="8" cols="70"></textarea>
-      <br>
-    </div>
-  </div>
-
-  <form id="post-create" class="border">
-    <fieldset>
-      <legend>Create Post</legend>
-      <input type="submit" value="Create Post">
-    </fieldset>
-  </form>
 
     <hr width="60%">
 
-// <div id="content" class="content"></div>
+    <div id="content" class="content"></div>
 
-  <div class="footer">
-  <form id="post-index" class="border">
-    <fieldset>
-      <legend>Get All Posts</legend>
-      <input type="submit" value="Get All Posts">
-    </fieldset>
-  </form>
+    <div class="footer">
+      <form id="post-index" class="border">
+        <fieldset>
+          <legend>Get All Posts</legend>
+          <input type="submit" value="Get All Posts">
+        </fieldset>
+      </form>
 
-  <form id="post-show" class="border">
-    <fieldset>
-      <legend>Get Post</legend>
-      <input type="text" name="post[id]" placeholder="Enter Post ID">
-      <input type="submit">
-    </fieldset>
-  </form>
+      <form id="post-show" class="border">
+        <fieldset>
+          <legend>Get Post</legend>
+          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="submit">
+        </fieldset>
+      </form>
 
-  <form id="post-delete" class="border">
-    <fieldset>
-      <legend>Delete Post</legend>
-      <input type="text" name="post[id]" placeholder="Enter Post ID">
-      <input type="submit" value="Delete Post">
-    </fieldset>
-  </form>
+      <form id="post-delete" class="border">
+        <fieldset>
+          <legend>Delete Post</legend>
+          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="submit" value="Delete Post">
+        </fieldset>
+      </form>
 
-  <form id="post-update" class="border">
-    <fieldset>
-      <legend>Update Post</legend>
-      <input type="text" name="post[id]" placeholder="Enter Post ID">
-      <input type="text" name="post[text]" placeholder="Enter Post Text">
-      <input type="submit" value="Update Post">
-    </fieldset>
-  </form>
-</div>
+      <form id="post-update" class="border">
+        <fieldset>
+          <legend>Update Post</legend>
+          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="text" name="post[text]" placeholder="Enter Post Text">
+          <input type="submit" value="Update Post">
+        </fieldset>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
