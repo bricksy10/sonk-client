@@ -1,6 +1,6 @@
 'use strict'
 
-const onCreateSuccess = function (data) {
+const onCreatePostSuccess = function (data) {
   $('#message').text('Post successfully created')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -8,7 +8,7 @@ const onCreateSuccess = function (data) {
   $('form').trigger('reset')
 }
 
-const onCreateFailure = function (error) {
+const onCreatePostFailure = function (error) {
   $('#message').text('Error on creating post')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -16,15 +16,14 @@ const onCreateFailure = function (error) {
   $('form').trigger('reset')
 }
 
-const onIndexSuccess = function (data) {
+const onIndexPostSuccess = function (data) {
   $('#message').text('All posts successfully received')
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('onIndexSuccess ran. Data is :', data.posts)
-  $('form').trigger('reset')
 }
 
-const onIndexFailure = function (error) {
+const onIndexPostFailure = function (error) {
   $('#message').text('Error on getting posts')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -32,7 +31,7 @@ const onIndexFailure = function (error) {
   $('form').trigger('reset')
 }
 
-const onShowSuccess = function (data) {
+const onShowPostSuccess = function (data) {
   $('#message').text('One post successfully received')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -40,7 +39,7 @@ const onShowSuccess = function (data) {
   $('form').trigger('reset')
 }
 
-const onShowFailure = function (error) {
+const onShowPostFailure = function (error) {
   $('#message').text('Error on getting post')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -48,7 +47,7 @@ const onShowFailure = function (error) {
   $('form').trigger('reset')
 }
 
-const onDestroySuccess = function () {
+const onDeletePostSuccess = function (data) {
   $('#message').text('Post successfully deleted')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -56,15 +55,15 @@ const onDestroySuccess = function () {
   $('form').trigger('reset')
 }
 
-const onDestroyFailure = function (error) {
+const onDeletePostFailure = function (error) {
   $('#message').text('Error on deleting post')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.error('onDestroyFailure ran. Error is :', error)
+  console.error('onDeleteFailure ran. Error is :', error)
   $('form').trigger('reset')
 }
 
-const onUpdateSuccess = function () {
+const onUpdatePostSuccess = function (data) {
   $('#message').text('Post successfully updated')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -72,7 +71,7 @@ const onUpdateSuccess = function () {
   $('form').trigger('reset')
 }
 
-const onUpdateFailure = function (error) {
+const onUpdatePostFailure = function (error) {
   $('#message').text('Error on updating post')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -81,14 +80,14 @@ const onUpdateFailure = function (error) {
 }
 
 module.exports = {
-  onCreateSuccess,
-  onCreateFailure,
-  onIndexSuccess,
-  onIndexFailure,
-  onShowSuccess,
-  onShowFailure,
-  onDestroySuccess,
-  onDestroyFailure,
-  onUpdateSuccess,
-  onUpdateFailure
+  onCreatePostSuccess,
+  onCreatePostFailure,
+  onIndexPostSuccess,
+  onIndexPostFailure,
+  onShowPostSuccess,
+  onShowPostFailure,
+  onDeletePostSuccess,
+  onDeletePostFailure,
+  onUpdatePostSuccess,
+  onUpdatePostFailure
 }

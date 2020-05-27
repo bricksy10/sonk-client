@@ -9,17 +9,20 @@ const onCreatePost = function (event) {
   event.preventDefault()
   console.log('onCreatePost ran!')
 
-  const data = getFormFields(event.target)
-  api.create(data)
-    .then(ui.onCreateSuccess)
-    .catch(ui.onCreateFailure)
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.createPost(formData)
+    .then(api.indexPost)
+    .then(ui.createPostSuccess)
+    .catch(console.error)
 }
 
-const onIndexPosts = function (event) {
+const onIndexPost = function (event) {
   event.preventDefault()
   console.log('onIndexPosts ran!')
 
-  api.index()
+  api.indexPost()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
 }
@@ -32,7 +35,7 @@ const onShowPost = function (event) {
   const post = data.post
 
   if (post.id.length !== 0) {
-    api.show(post)
+    api.showPost(post)
       .then(ui.onShowSuccess)
       .catch(ui.onShowFailure)
   } else {
@@ -50,7 +53,7 @@ const onDeletePost = function (event) {
   const post = data.post
 
   if (post.id.length !== 0) {
-    api.destroy(post.id)
+    api.deletePost(post.id)
       .then(ui.onDeleteSuccess)
       .catch(ui.onDeleteFailure)
   } else {
@@ -74,7 +77,7 @@ const onUpdatePost = function (event) {
     return false
   }
   if (post.id.length !== 0) {
-    api.update(data)
+    api.updatePost(data)
       .then(ui.onUpdateSuccess)
       .catch(ui.onUpdateFailure)
   } else {
@@ -84,14 +87,10 @@ const onUpdatePost = function (event) {
   }
 }
 
-const addHandlers = () => {
-  $('#post-create').on('submit', onCreatePost)
-  $('#post-index').on('submit', onIndexPosts)
-  $('#post-show').on('submit', onShowPost)
-  $('#post-delete').on('submit', onDeletePost)
-  $('#post-update').on('submit', onUpdatePost)
-}
-
 module.exports = {
-  addHandlers
+  onCreatePost,
+  onIndexPost,
+  onShowPost,
+  onDeletePost,
+  onUpdatePost
 }

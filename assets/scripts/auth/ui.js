@@ -7,6 +7,7 @@ const signUpSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log('signUpSuccess ran. Data is :', data)
+  $('form').trigger('reset')
   $('.authenticated').show()
   $('.unauthenticated').hide()
 }
@@ -27,6 +28,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('.authenticated').show()
   $('.unauthenticated').hide()
+  $('form').trigger('reset')
 }
 
 const signInFailure = function (error) {
@@ -37,7 +39,7 @@ const signInFailure = function (error) {
   $('form').trigger('reset')
 }
 
-const signOutSuccess = function () {
+const signOutSuccess = function (data) {
   $('#message').text('Signed out successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -52,11 +54,10 @@ const signOutFailure = function (error) {
   $('#message').text('Error on sign out')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
-  $('form').trigger('reset')
+  console.log('signOutFailure ran. Error is :', error)
 }
 
-const changePasswordSuccess = function () {
+const changePasswordSuccess = function (data) {
   $('#message').text('Changed password successfully')
   $('#message').removeClass()
   $('#message').addClass('success')

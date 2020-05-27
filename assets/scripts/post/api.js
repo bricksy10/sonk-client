@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const create = function (data) {
+const createPost = function (data) {
   console.log('data: ', data)
   return $.ajax({
     url: config.apiUrl + '/post',
@@ -16,7 +16,7 @@ const create = function (data) {
   })
 }
 
-const index = function () {
+const indexPost = function () {
   return $.ajax({
     url: config.apiUrl + '/post',
     method: 'GET',
@@ -26,7 +26,7 @@ const index = function () {
   })
 }
 
-const show = function (post) {
+const showPost = function (post) {
   return $.ajax({
     url: config.apiUrl + '/post/' + post.id,
     method: 'GET',
@@ -36,7 +36,7 @@ const show = function (post) {
   })
 }
 
-const destroy = function (id) {
+const deletePost = function (id) {
   return $.ajax({
     url: config.apiUrl + '/post/' + id,
     method: 'DELETE',
@@ -46,7 +46,7 @@ const destroy = function (id) {
   })
 }
 
-const update = function (data) {
+const updatePost = function (data) {
   return $.ajax({
     url: config.apiUrl + '/post/' + data.post.id,
     method: 'PATCH',
@@ -59,9 +59,9 @@ const update = function (data) {
 }
 
 module.exports = {
-  create,
-  index,
-  show,
-  destroy,
-  update
+  createPost,
+  indexPost,
+  showPost,
+  deletePost,
+  updatePost
 }
