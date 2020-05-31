@@ -25,9 +25,9 @@
     <form id="sign-up" class="border">
       <fieldset>
         <legend>Sign up!</legend>
-        <input type="text" name="credentials[email]" placeholder="Email">
-        <input type="password" name="credentials[password]" placeholder="Password">
-        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <input required type="text" name="credentials[email]" placeholder="Email">
+        <input required type="password" name="credentials[password]" placeholder="Password">
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
         <input type="submit" value="Sign up!">
       </fieldset>
     </form>
@@ -35,8 +35,8 @@
     <form id="sign-in" class="border">
       <fieldset>
         <legend>Sign in!</legend>
-        <input type="text" name="credentials[email]" placeholder="Email">
-        <input type="password" name="credentials[password]" placeholder="Password">
+        <input required type="text" name="credentials[email]" placeholder="Email">
+        <input required type="password" name="credentials[password]" placeholder="Password">
         <input type="submit" value="Sign in!">
       </fieldset>
     </form>
@@ -53,8 +53,8 @@
     <form id="change-password" class="border">
       <fieldset>
         <legend>Change Password!</legend>
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
+        <input required type="password" name="passwords[old]" placeholder="Old Password">
+        <input required type="password" name="passwords[new]" placeholder="New Password">
         <input type="submit" value="Change Password!">
       </fieldset>
     </form>
@@ -70,13 +70,10 @@
       </div>
       <div class="main">
         <h3>Create Post</h3>
-        <label class="textarea" style="height:100px;"></label>
-        <textarea id="postbox" name="post[text]" placeholder="Create new post.."rows="8" cols="70"></textarea>
-        <form id="post-create" class="border">
-          <fieldset>
-            <input type="submit" value="Create Post">
-          </fieldset>
-        </form>
+        <form id="post-create">
+            <input required type="text" name="post[body]" placeholder="Post text">
+            <button type="submit">Create Post</button>
+          </form>
 
         <br>
 
@@ -91,14 +88,14 @@
       <form id="post-index" class="border">
         <fieldset>
           <legend>Get All Posts</legend>
-          <input type="submit" value="Get All Posts">
+          <input required type="submit" value="Get All Posts">
         </fieldset>
       </form>
 
       <form id="post-show" class="border">
         <fieldset>
           <legend>Get Post</legend>
-          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input required type="text" name="post[id]" placeholder="Enter Post ID">
           <input type="submit">
         </fieldset>
       </form>
@@ -106,7 +103,7 @@
       <form id="post-delete" class="border">
         <fieldset>
           <legend>Delete Post</legend>
-          <input type="text" name="post[id]" placeholder="Enter Post ID">
+          <input required type="text" name="post[id]" placeholder="Enter Post ID">
           <input type="submit" value="Delete Post">
         </fieldset>
       </form>
@@ -114,8 +111,8 @@
       <form id="post-update" class="border">
         <fieldset>
           <legend>Update Post</legend>
-          <input type="text" name="post[id]" placeholder="Enter Post ID">
-          <input type="text" name="post[text]" placeholder="Enter Post Text">
+          <input required type="text" name="post[id]" placeholder="Enter Post ID">
+          <input required type="text" name="post[text]" placeholder="Enter Post Text">
           <input type="submit" value="Update Post">
         </fieldset>
       </form>

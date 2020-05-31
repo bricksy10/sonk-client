@@ -9,12 +9,11 @@ const onCreatePost = function (event) {
   event.preventDefault()
   console.log('onCreatePost ran!')
 
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
 
   api.createPost(formData)
     .then(api.indexPost)
-    .then(ui.createPostSuccess)
+    .then(ui.onCreatePostSuccess)
     .catch(console.error)
 }
 
@@ -23,8 +22,8 @@ const onIndexPost = function (event) {
   console.log('onIndexPosts ran!')
 
   api.indexPost()
-    .then(ui.onIndexSuccess)
-    .catch(ui.onIndexFailure)
+    .then(ui.onIndexPostSuccess)
+    .catch(ui.onIndexPostFailure)
 }
 
 const onShowPost = function (event) {
@@ -36,8 +35,8 @@ const onShowPost = function (event) {
 
   if (post.id.length !== 0) {
     api.showPost(post)
-      .then(ui.onShowSuccess)
-      .catch(ui.onShowFailure)
+      .then(ui.onShowPostSuccess)
+      .catch(ui.onShowPostFailure)
   } else {
     $('#message').html('<p>Please provide a post id!</p>')
     $('#message').css('background-color', 'red')
@@ -54,8 +53,8 @@ const onDeletePost = function (event) {
 
   if (post.id.length !== 0) {
     api.deletePost(post.id)
-      .then(ui.onDeleteSuccess)
-      .catch(ui.onDeleteFailure)
+      .then(ui.onDeletePostSuccess)
+      .catch(ui.onDeletePostFailure)
   } else {
     $('#message').html('<p>Please provide a post id!</p>')
     $('#message').css('background-color', 'red')
@@ -78,8 +77,8 @@ const onUpdatePost = function (event) {
   }
   if (post.id.length !== 0) {
     api.updatePost(data)
-      .then(ui.onUpdateSuccess)
-      .catch(ui.onUpdateFailure)
+      .then(ui.onUpdatePostSuccess)
+      .catch(ui.onUpdatePostFailure)
   } else {
     $('#message').html('<p>Please provide a post id!</p>')
     $('#message').css('background-color', 'red')

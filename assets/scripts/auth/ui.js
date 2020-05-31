@@ -8,8 +8,6 @@ const signUpSuccess = function (data) {
   $('#message').addClass('success')
   console.log('signUpSuccess ran. Data is :', data)
   $('form').trigger('reset')
-  $('.authenticated').show()
-  $('.unauthenticated').hide()
 }
 
 const signUpFailure = function (error) {

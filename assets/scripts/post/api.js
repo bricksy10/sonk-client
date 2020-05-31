@@ -3,15 +3,14 @@
 const config = require('../config')
 const store = require('../store')
 
-const createPost = function (data) {
-  console.log('data: ', data)
+const createPost = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/post',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: formData
     // data: data
   })
 }
@@ -53,7 +52,7 @@ const updatePost = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: data
     // data: data
   })
 }
