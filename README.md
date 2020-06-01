@@ -47,4 +47,4 @@ This application allows the user to create a profile page, make posts to their p
 #### Wireframe:
 ![wireframe](https://imgur.com/jwWd8aw)
 
-# sonk-client
+#sonk-client
