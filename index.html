@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SONK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <img src="public/sonk.jpg" alt="Logo" style="float: left"/>
+    <h1>SONK Athlete Profile</h1>
+  </div>
+
+  <br>
+
+
+  <div class="unauthenticated">
+    <form id="sign-up" class="border">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input required type="text" name="credentials[email]" placeholder="Email">
+        <input required type="password" name="credentials[password]" placeholder="Password">
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <input type="submit" value="Sign up!">
+      </fieldset>
+    </form>
+
+    <form id="sign-in" class="border">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <input required type="text" name="credentials[email]" placeholder="Email">
+        <input required type="password" name="credentials[password]" placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="authenticated">
+    <form id="sign-out" class="border">
+      <fieldset>
+        <legend>Sign Out!</legend>
+        <input type="submit" value="Sign out!">
+      </fieldset>
+    </form>
+
+    <form id="change-password" class="border">
+      <fieldset>
+        <legend>Change Password!</legend>
+        <input required type="password" name="passwords[old]" placeholder="Old Password">
+        <input required type="password" name="passwords[new]" placeholder="New Password">
+        <input type="submit" value="Change Password!">
+      </fieldset>
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+
+    <div class="row">
+      <div class="side">
+        <h3>About Me</h3>
+        <div class="fakeimg" style="height:200px;">Athlete Photo Here</div>
+      </div>
+      <div class="main">
+        <h3>Create Post</h3>
+        <form id="post-create">
+            <input required type="text" name="post[body]" placeholder="Post text">
+            <button type="submit">Create Post</button>
+          </form>
+
+        <br>
+
+      </div>
+    </div>
+
+    <hr width="60%">
+
+    <div id="content" class="content"></div>
+
+    <div class="footer">
+      <form id="post-index" class="border">
+        <fieldset>
+          <legend>Get All Posts</legend>
+          <input required type="submit" value="Get All Posts">
+        </fieldset>
+      </form>
+
+      <form id="post-show" class="border">
+        <fieldset>
+          <legend>Get Post</legend>
+          <input required type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="submit">
+        </fieldset>
+      </form>
+
+      <form id="post-delete" class="border">
+        <fieldset>
+          <legend>Delete Post</legend>
+          <input required type="text" name="post[id]" placeholder="Enter Post ID">
+          <input type="submit" value="Delete Post">
+        </fieldset>
+      </form>
+
+      <form id="post-update" class="border">
+        <fieldset>
+          <legend>Update Post</legend>
+          <input required type="text" name="post[id]" placeholder="Enter Post ID">
+          <input required type="text" name="post[text]" placeholder="Enter Post Text">
+          <input type="submit" value="Update Post">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
